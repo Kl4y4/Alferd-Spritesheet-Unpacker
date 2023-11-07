@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2010
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForkandBeard.Logic", "ForkandBeard.Logic\ForkandBeard.Logic.csproj", "{B148DBB7-9B11-42DE-BB18-1D35CBE01D0B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForkandBeard.Util", "ForkandBeard.Util\ForkandBeard.Util.csproj", "{D4DEBB68-E776-45F9-A1DB-E5000C206EFC}"
@@ -8,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASU", "ASU\ASU.csproj", "{94BEE860-CC4C-42DF-A7D5-387F599AEEE1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageQuantizers", "ImageQuantizers\ImageQuantizers.csproj", "{07DECDCF-C7D5-407A-8BF4-2D1187B47A27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExposureToAPI", "ExposureToAPI\ExposureToAPI.csproj", "{B358B4F1-8977-4257-B3E5-081385552E84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,8 +75,27 @@ Global
 		{07DECDCF-C7D5-407A-8BF4-2D1187B47A27}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{07DECDCF-C7D5-407A-8BF4-2D1187B47A27}.Release|x64.ActiveCfg = Release|Any CPU
 		{07DECDCF-C7D5-407A-8BF4-2D1187B47A27}.Release|x86.ActiveCfg = Release|Any CPU
+		{B358B4F1-8977-4257-B3E5-081385552E84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B358B4F1-8977-4257-B3E5-081385552E84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B358B4F1-8977-4257-B3E5-081385552E84}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B358B4F1-8977-4257-B3E5-081385552E84}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B358B4F1-8977-4257-B3E5-081385552E84}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B358B4F1-8977-4257-B3E5-081385552E84}.Debug|x64.Build.0 = Debug|Any CPU
+		{B358B4F1-8977-4257-B3E5-081385552E84}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B358B4F1-8977-4257-B3E5-081385552E84}.Debug|x86.Build.0 = Debug|Any CPU
+		{B358B4F1-8977-4257-B3E5-081385552E84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B358B4F1-8977-4257-B3E5-081385552E84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B358B4F1-8977-4257-B3E5-081385552E84}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{B358B4F1-8977-4257-B3E5-081385552E84}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{B358B4F1-8977-4257-B3E5-081385552E84}.Release|x64.ActiveCfg = Release|Any CPU
+		{B358B4F1-8977-4257-B3E5-081385552E84}.Release|x64.Build.0 = Release|Any CPU
+		{B358B4F1-8977-4257-B3E5-081385552E84}.Release|x86.ActiveCfg = Release|Any CPU
+		{B358B4F1-8977-4257-B3E5-081385552E84}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {671558AF-7274-4B6C-BB70-9CDF0EE43119}
 	EndGlobalSection
 EndGlobal
