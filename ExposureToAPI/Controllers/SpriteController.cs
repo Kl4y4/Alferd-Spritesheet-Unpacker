@@ -3,12 +3,8 @@ using System.Drawing;
 
 namespace ExposureToAPI.Controllers {
     [ApiController]
-    [Route("[controller]")]
+    [Route("sprites")]
     public class SpriteController : ControllerBase {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
 
         private readonly ILogger<SpriteController> _logger;
 
@@ -16,8 +12,8 @@ namespace ExposureToAPI.Controllers {
             _logger = logger;
         }
 
-        [HttpPost(Name = "GetSpriteCoordinates")]
-        public async Task<ActionResult<SpriteInfo>> Get(IFormFile image) {
+        [HttpPost("single")]
+        public async Task<ActionResult<SpriteInfo>> PostSingle(IFormFile image) {
 
             var stream = new MemoryStream();
             image.CopyTo(stream);
@@ -38,6 +34,49 @@ namespace ExposureToAPI.Controllers {
 
             return Ok(sprites);
             
+        }
+
+        [HttpPost("multiple")]
+        public async Task<ActionResult<SpriteInfo>> PostMultiple(IFormFile[] images) {
+
+            MemoryStream stream;
+            Bitmap bmp;
+            List<ASU.BO.ImageUnpacker> unpackers = new List<ASU.BO.ImageUnpacker>();
+
+            foreach (var image in images) {
+                stream = new MemoryStream();
+                image.CopyTo(stream);
+                bmp = new Bitmap(stream);
+                unpackers.Add(new ASU.BO.ImageUnpacker(bmp, image.FileName, false));
+            }
+
+
+            foreach (var unpacker in unpackers) {
+                unpacker.StartUnpacking();
+            }
+
+            while (unpackers.Exists(unpacker => !unpacker.IsUnpacked())) {
+                await Task.Delay(100);
+            }
+
+            List<List<SpriteInfo>> sprites = new List<List<SpriteInfo>>();
+            List<SpriteInfo> eachImageSprites;
+
+            foreach (var unpacker in unpackers) {
+
+                eachImageSprites = new List<SpriteInfo>();
+
+                unpacker.GetBoxes().ForEach((box) => {
+                    Console.WriteLine("Box being processed");
+                    eachImageSprites.Add(new SpriteInfo(box.X, box.Y, box.Width, box.Height));
+                });
+
+                sprites.Add(eachImageSprites);
+
+            }
+
+            return Ok(sprites);
+
         }
     }
 }
