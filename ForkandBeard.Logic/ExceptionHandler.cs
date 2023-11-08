@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Forms;
 
 namespace ForkandBeard.Logic
 {
@@ -11,10 +12,11 @@ namespace ForkandBeard.Logic
 
         public static void HandleException(Exception ex, string toEmailAddress)
         {
-            HandleException(ex, toEmailAddress, null);
+            //HandleException(ex, toEmailAddress, null);
+            Console.WriteLine(ex.Message);
         }
 
-        public static void HandleException(Exception ex, string toEmailAddress, System.Windows.Forms.IWin32Window owner)
+        public static void HandleException(Exception ex, string toEmailAddress, IWin32Window owner)
         {
             lock (exceptionFormLock)
             {
@@ -59,7 +61,8 @@ namespace ForkandBeard.Logic
 
         public static void HandleException(Exception ex)
         {
-            HandleException(ex, String.Empty);
+            //HandleException(ex, String.Empty);
+            Console.WriteLine(ex.Message);
         }
     }
 }
