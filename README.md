@@ -24,3 +24,9 @@ I also, originally, never planned on releasing it, so it was only ever going to 
 Ideally I'd like to move all the code over to C# and remove all the Hungarian notation and other kak.
 ###### Updates
 06/11/2014 -  All VB code has now been replaced with C#
+
+
+## API usage
+Exposed two endpoints - /sprites/single and /sprites/multiple, to send either one or many images. Both accept Content-Type: multipart/form-data. API returns each sprite's left-top's corner offset as well as its' width and height.
+#### Supported file extensions
+BMP, GIF, EXIF, JPG, PNG, and TIFF
